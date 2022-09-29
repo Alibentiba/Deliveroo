@@ -11,7 +11,7 @@ const Home = () => {
     navigation.setOptions({headerShown:false,})
   },[])
   return (
-    <SafeAreaView className=" pt-5 w-screen h-screen mt-5  ">
+    <SafeAreaView className=" pt-5 w-screen h-screen mt-5 bg-stone-300 ">
       <View className="flex-row bg-white">
       <View className="flex-row w-80 pl-1  space-x-2">
        <Image 
@@ -35,11 +35,13 @@ const Home = () => {
       </View>
       <AdjustmentsVerticalIcon  fill="#ff6a06" size={30}/>
        </View>
-     <View className="w-5/5 ">
+     <ScrollView>
       <Cat/>
       <FeatureRows title="hello Ali" description="food, substance consisting essentially of protein"/>
+      <FeatureRows title="hello Ali" description="food, substance consisting essentially of protein"/>
+      <FeatureRows title="hello Ali" description="food, substance consisting essentially of protein"/>
 
-     </View>
+     </ScrollView>
 
 
   </SafeAreaView>
