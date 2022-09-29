@@ -4,6 +4,7 @@ import React, { Component, useLayoutEffect } from 'react'
 import {  Image, SafeAreaView, ScrollView, Text, TextInput, View } from 'react-native';
 import {UserIcon,ChevronDownIcon,MagnifyingGlassIcon,AdjustmentsVerticalIcon} from "react-native-heroicons/mini";
 import Cat from '../Component/Cat';
+import FeatureRows from '../Component/FeatureRows';
 const Home = () => {
   const navigation = useNavigation();
   useLayoutEffect(()=>{
@@ -34,12 +35,11 @@ const Home = () => {
       </View>
       <AdjustmentsVerticalIcon  fill="#ff6a06" size={30}/>
        </View>
-   
-     <View className="w-5/5  border">
+     <View className="w-5/5 ">
       <Cat/>
+      <FeatureRows title="hello Ali" description="food, substance consisting essentially of protein"/>
 
      </View>
-
 
 
   </SafeAreaView>

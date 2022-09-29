@@ -1,4 +1,4 @@
-import { blue } from '@mui/material/colors';
+
 import React from 'react';
 import { View, Image, StyleSheet,Text, TouchableOpacity } from 'react-native';
 const Cardcat = ({title,iurl}) => {
@@ -13,7 +13,7 @@ const Cardcat = ({title,iurl}) => {
           uri:iurl
         }}
       />
-      <Text>{title}</Text>
+      <Text  style={styles.TextTitle} >{title}</Text>
     </TouchableOpacity >
 
   );
@@ -21,14 +21,26 @@ const Cardcat = ({title,iurl}) => {
 const styles = StyleSheet.create({
 
   tinyLogo: {
-    width: 45,
-    height: 45,
-    borderRadius:10,
+    width: 60,
+    height: 60,
+    borderRadius:4,
   },
   TouchableOpacity:{
-width:60,
-height:50,
+width:80,
+height:65,
+position:'relative'
+
+  },
+  TextTitle:{
+    position:'absolute',
+    bottom:3,
+    left:3,
+    fontSize:14,
+    color:"#ffffff",
+    fontWeight:"600",
+    textTransform:'capitalize'
 
   }
+
 });
 export default Cardcat
