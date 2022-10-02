@@ -1,22 +1,25 @@
 import React from 'react'
-import { View,StyleSheet,Image,Text } from 'react-native'
+import { View,StyleSheet,Image,Text,TouchableOpacity } from 'react-native'
 import {StarIcon,MapPinIcon} from "react-native-heroicons/mini";
 
 const CardRow = () => {
   return (
-    <View style={styles.CardRow}>
-    <Image style={styles.Cardimage}source={{uri:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReIXLa6RfUst4xCpUfnG-gWrR-KlS5lVPOUg&usqp=CAU'}}/>
-   <Text style={styles.Cardtitle} >Node's</Text>
-   <View style={styles.ViewRat} > 
-    <StarIcon fill="#ff6a06" size={20}/>
-   <Text style={styles.CardRate}> Offer of dot's </Text>
-    </View>
-    <View style={styles.ViewRat} > 
-    <MapPinIcon fill="#ff6a06" size={20}/>
-   <Text style={styles.CardRate}> Alger center -alger</Text>
+    <TouchableOpacity style={styles.CardRow}>
 
-    </View>
-    </View>
+          <Image style={styles.Cardimage}source={{uri:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQ-lRHZVQdchHOYdrukagBVmNQLPQhCOiUag&usqp=CAU'}}/>
+          <Text style={styles.Cardtitle} >Node's</Text>
+
+            <View style={styles.ViewRat} > 
+                    <StarIcon fill="#a2ff03" size={20}/>
+                    <Text style={styles.CardRate}> Offer of dot's </Text>
+            </View>
+
+                <View style={styles.ViewRat} > 
+                    <MapPinIcon fill="#ff6a06" size={20}/>
+                    <Text style={styles.CardRate}> Alger center -alger</Text>
+                </View>
+
+    </TouchableOpacity>
   )
 }
 
