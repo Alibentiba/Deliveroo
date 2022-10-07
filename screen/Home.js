@@ -1,15 +1,24 @@
 
 import { useNavigation } from '@react-navigation/native';
-import React, { Component, useLayoutEffect } from 'react'
+import React, { Component, useEffect, useLayoutEffect, useState } from 'react'
 import {  Image, SafeAreaView, ScrollView, Text, TextInput, View } from 'react-native';
 import {UserIcon,ChevronDownIcon,MagnifyingGlassIcon,AdjustmentsVerticalIcon} from "react-native-heroicons/mini";
 import Cat from '../Component/Cat';
 import FeatureRows from '../Component/FeatureRows';
+import sanityClient from "../sanity" 
+
 const Home = () => {
   const navigation = useNavigation();
-  useLayoutEffect(()=>{
-    navigation.setOptions({headerShown:false,})
-  },[])
+  useLayoutEffect(()=>{navigation.setOptions({headerShown:false,})},[])
+
+const [Featured,setFeatured]=useState([])
+
+useEffect(() =>{
+  sanityClient.fetch(`* [ _type == " featured " ] {...restaurants [ ] - > {...dishes [ ]-> }`
+  .then((data)=>{setFeatured(data)} ))
+},[])
+// console.log('lsdflksdhf;sdhf;d,sdhf',Featured)
+
   return (
     <SafeAreaView className=" pt-5 w-screen h-screen mt-5 ">
       <View className="flex-row bg-white">
@@ -41,6 +50,7 @@ const Home = () => {
       <FeatureRows title="hello Ali" description="food, substance consisting essentially of protein"/>
       <FeatureRows title="hello Ali" description="food, substance consisting essentially of protein"/>
       <FeatureRows title="hello Ali" description="food, substance consisting essentially of protein"/>
+      
      </ScrollView>
 
 
